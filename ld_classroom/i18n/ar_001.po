@@ -1,0 +1,173 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ld_classroom
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-12 05:22+0000\n"
+"PO-Revision-Date: 2022-12-12 05:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ld_classroom
+#: model:ir.model.fields,field_description:ld_classroom.field_op_classroom__active
+msgid "Active"
+msgstr "نشيط"
+
+#. module: ld_classroom
+#: model_terms:ir.ui.view,arch_db:ld_classroom.view_op_classroom_form
+#: model_terms:ir.ui.view,arch_db:ld_classroom.view_op_classroom_search
+msgid "Archived"
+msgstr "أرشفة"
+
+#. module: ld_classroom
+#: model:ir.model.fields,field_description:ld_classroom.field_op_asset__asset_id
+#: model:ir.model.fields,field_description:ld_classroom.field_op_classroom__asset_line
+msgid "Asset"
+msgstr "أصل"
+
+#. module: ld_classroom
+#: model_terms:ir.ui.view,arch_db:ld_classroom.view_op_classroom_form
+msgid "Asset Management"
+msgstr "إدارة الأصول"
+
+#. module: ld_classroom
+#: model:ir.model.fields,field_description:ld_classroom.field_op_classroom__batch_id
+msgid "Batch"
+msgstr "حزمة"
+
+#. module: ld_classroom
+#: model_terms:ir.ui.view,arch_db:ld_classroom.view_op_classroom_search
+msgid "Capacity"
+msgstr "الاهلية"
+
+#. module: ld_classroom
+#: model:ir.ui.menu,name:ld_classroom.menu_op_school_config_class_room
+msgid "Class Room Management"
+msgstr "إدارة غرفة الفصل"
+
+#. module: ld_classroom
+#: model:ir.actions.act_window,name:ld_classroom.act_open_op_classroom_view
+#: model:ir.ui.menu,name:ld_classroom.menu_op_classroom_sub
+msgid "Class Rooms"
+msgstr "غرف الفصل"
+
+#. module: ld_classroom
+#: model:ir.model,name:ld_classroom.model_op_classroom
+#: model:ir.model.fields,field_description:ld_classroom.field_op_facility_line__classroom_id
+#: model_terms:ir.ui.view,arch_db:ld_classroom.view_op_classroom_form
+#: model_terms:ir.ui.view,arch_db:ld_classroom.view_op_classroom_search
+#: model_terms:ir.ui.view,arch_db:ld_classroom.view_op_classroom_tree
+msgid "Classroom"
+msgstr "قاعة الدراسة"
+
+#. module: ld_classroom
+#: model:ir.model,name:ld_classroom.model_op_asset
+msgid "Classroom Assets"
+msgstr "أصول الفصل"
+
+#. module: ld_classroom
+#: model:ir.model.fields,field_description:ld_classroom.field_op_asset__code
+#: model:ir.model.fields,field_description:ld_classroom.field_op_classroom__code
+#: model_terms:ir.ui.view,arch_db:ld_classroom.view_op_classroom_search
+msgid "Code"
+msgstr "شفرة"
+
+#. module: ld_classroom
+#: model:ir.model.constraint,message:ld_classroom.constraint_op_classroom_unique_classroom_code
+msgid "Code should be unique per classroom!"
+msgstr "يجب أن يكون الكود فريدًا لكل فصل دراسي!"
+
+#. module: ld_classroom
+#: model:ir.model.fields,field_description:ld_classroom.field_op_classroom__course_id
+msgid "Course"
+msgstr "مسار"
+
+#. module: ld_classroom
+#: model:ir.model.fields,field_description:ld_classroom.field_op_asset__create_uid
+#: model:ir.model.fields,field_description:ld_classroom.field_op_classroom__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: ld_classroom
+#: model:ir.model.fields,field_description:ld_classroom.field_op_asset__create_date
+#: model:ir.model.fields,field_description:ld_classroom.field_op_classroom__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: ld_classroom
+#: model:ir.model.fields,field_description:ld_classroom.field_op_asset__display_name
+#: model:ir.model.fields,field_description:ld_classroom.field_op_classroom__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: ld_classroom
+#: model_terms:ir.ui.view,arch_db:ld_classroom.view_op_classroom_form
+msgid "Facilities"
+msgstr "مرافق"
+
+#. module: ld_classroom
+#: model:ir.model.fields,field_description:ld_classroom.field_op_classroom__facilities
+msgid "Facility Lines"
+msgstr "خطوط المنشأة"
+
+#. module: ld_classroom
+#: model_terms:ir.ui.view,arch_db:ld_classroom.view_op_classroom_search
+msgid "Group By..."
+msgstr "مجموعة من..."
+
+#. module: ld_classroom
+#: model:ir.model.fields,field_description:ld_classroom.field_op_asset__id
+#: model:ir.model.fields,field_description:ld_classroom.field_op_classroom__id
+msgid "ID"
+msgstr "بطاقة تعريف"
+
+#. module: ld_classroom
+#: model:ir.model.fields,field_description:ld_classroom.field_op_asset____last_update
+#: model:ir.model.fields,field_description:ld_classroom.field_op_classroom____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل على"
+
+#. module: ld_classroom
+#: model:ir.model.fields,field_description:ld_classroom.field_op_asset__write_uid
+#: model:ir.model.fields,field_description:ld_classroom.field_op_classroom__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: ld_classroom
+#: model:ir.model.fields,field_description:ld_classroom.field_op_asset__write_date
+#: model:ir.model.fields,field_description:ld_classroom.field_op_classroom__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث على"
+
+#. module: ld_classroom
+#: model:ir.model,name:ld_classroom.model_op_facility_line
+msgid "Manage Facility Line"
+msgstr "إدارة خط المنشأة"
+
+#. module: ld_classroom
+#: model:ir.model.fields,field_description:ld_classroom.field_op_classroom__name
+#: model_terms:ir.ui.view,arch_db:ld_classroom.view_op_classroom_search
+msgid "Name"
+msgstr "اسم"
+
+#. module: ld_classroom
+#: model:ir.model.fields,field_description:ld_classroom.field_op_classroom__capacity
+msgid "No of Person"
+msgstr "لا شخص"
+
+#. module: ld_classroom
+#: model:ir.model.fields,field_description:ld_classroom.field_op_asset__product_id
+msgid "Product"
+msgstr "منتج"
+
+#. module: ld_classroom
+#: model:ir.model.fields,field_description:ld_classroom.field_op_asset__product_uom_qty
+msgid "Quantity"
+msgstr "كمية"

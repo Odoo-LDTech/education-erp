@@ -1,0 +1,1243 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ld_admission
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-12 06:40+0000\n"
+"PO-Revision-Date: 2022-12-12 06:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.report_admission_analysis
+msgid "<b>Course:</b>"
+msgstr "<b> Kursas: </b>"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.report_admission_analysis
+msgid "<b>From Date:</b>"
+msgstr "<b> Nuo datos: </b>"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.report_admission_analysis
+msgid "<b>To Date:</b>"
+msgstr "<b> iki šiol: </b>"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.report_admission_analysis
+msgid ""
+"<br/>\n"
+"                            <b>Total Number of Students :</b>"
+msgstr ""
+"<br/>\n"
+"                            <b> Bendras studentų skaičius: </b>"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.report_admission_analysis
+msgid "<strong>Admission Analysis</strong>"
+msgstr "<strong> priėmimo analizė </strong>"
+
+#. module: ld_admission
+#: model:op.admission,first_name:ld_admission.op_admission_10
+msgid "Abhinav"
+msgstr "Abhinavas"
+
+#. module: ld_admission
+#: model:op.admission,name:ld_admission.op_admission_10
+msgid "Abhinav Y Chaudhri"
+msgstr "Abhinav y chaudhri"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__academic_years_id
+msgid "Academic Year"
+msgstr "Mokslo metai"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__message_needaction
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__message_needaction
+msgid "Action Needed"
+msgstr "Reikalingas veiksmas"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__active
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__active
+msgid "Active"
+msgstr "Aktyvus"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__activity_ids
+msgid "Activities"
+msgstr "Veikla"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Veiklos išimties dekoravimas"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__activity_state
+msgid "Activity State"
+msgstr "Veiklos būsena"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Veiklos tipo piktograma"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "Address"
+msgstr "Adresas"
+
+#. module: ld_admission
+#: model:ir.model,name:ld_admission.model_op_admission
+msgid "Admission"
+msgstr "Priėmimas"
+
+#. module: ld_admission
+#: model:ir.actions.report,name:ld_admission.action_report_report_admission_analysis
+#: model_terms:ir.ui.view,arch_db:ld_admission.admission_analysis_form
+msgid "Admission Analysis"
+msgstr "Priėmimo analizė"
+
+#. module: ld_admission
+#: model:ir.actions.act_window,name:ld_admission.admission_analysis_act
+#: model:ir.model,name:ld_admission.model_report_ld_admission_report_admission_analysis
+msgid "Admission Analysis Report"
+msgstr "Priėmimo analizės ataskaita"
+
+#. module: ld_admission
+#: model:ir.model,name:ld_admission.model_admission_analysis
+msgid "Admission Analysis Wizard"
+msgstr "Priėmimo analizės vedlys"
+
+#. module: ld_admission
+#: model:ir.model.fields.selection,name:ld_admission.selection__op_admission__state__admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "Admission Confirm"
+msgstr "Priėmimo patvirtinimas"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__admission_date
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_search
+msgid "Admission Date"
+msgstr "Priėmimo data"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "Admission Detail"
+msgstr "Priėmimo detalė"
+
+#. module: ld_admission
+#: model:ir.model.fields.selection,name:ld_admission.selection__op_admission_register__state__admission
+msgid "Admission Process"
+msgstr "Priėmimo procesas"
+
+#. module: ld_admission
+#: model:ir.model,name:ld_admission.model_op_admission_register
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__register_id
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_register_form
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_register_graph
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_register_pivot
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_register_search
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_register_tree
+msgid "Admission Register"
+msgstr "Priėmimo registras"
+
+#. module: ld_admission
+#: model:ir.actions.act_window,name:ld_admission.act_open_op_admission_register_view
+#: model:ir.ui.menu,name:ld_admission.menu_admission_register
+msgid "Admission Registers"
+msgstr "Priėmimo registrai"
+
+#. module: ld_admission
+#: model:ir.ui.menu,name:ld_admission.menu_admission_analysis
+msgid "Admission Report"
+msgstr "Priėmimo ataskaita"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__admission_ids
+#: model:ir.ui.menu,name:ld_admission.menu_op_admission_root
+#: model:ir.ui.menu,name:ld_admission.menu_op_admission_submenu
+msgid "Admissions"
+msgstr "Priėmimas"
+
+#. module: ld_admission
+#: model:op.admission,first_name:ld_admission.op_admission_17
+msgid "Alexis"
+msgstr "Aleksis"
+
+#. module: ld_admission
+#: model:op.admission,name:ld_admission.op_admission_17
+msgid "Alexis K Smith"
+msgstr "Aleksis K. Smithas"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__application_date
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_search
+msgid "Application Date"
+msgstr "Paraiškos data"
+
+#. module: ld_admission
+#. odoo-python
+#: code:addons/ld_admission/models/admission.py:0
+#, python-format
+msgid "Application Date should be between Start Date & End Date of Admission Register."
+msgstr "Paraiškos pateikimo data turi būti tarp priėmimo registro pradžios datos ir pabaigos datos."
+
+#. module: ld_admission
+#: model:ir.model.fields.selection,name:ld_admission.selection__op_admission_register__state__application
+msgid "Application Gathering"
+msgstr "Paraiškų rinkimas"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.report_admission_analysis
+msgid "Application No."
+msgstr "Paraiškos Nr."
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__application_number
+msgid "Application Number"
+msgstr "Paraiškos numeris"
+
+#. module: ld_admission
+#: model:ir.model.constraint,message:ld_admission.constraint_op_admission_unique_application_number
+msgid "Application Number must be unique per Application!"
+msgstr "Paraiškos numeris turi būti unikalus kiekvienai programai!"
+
+#. module: ld_admission
+#: model:ir.ui.menu,name:ld_admission.menu_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_register_form
+msgid "Applications"
+msgstr "Programos"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_register_form
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_register_search
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_search
+msgid "Archived"
+msgstr "Archyvuota"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__message_attachment_count
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__message_attachment_count
+msgid "Attachment Count"
+msgstr "Priedų skaičius"
+
+#. module: ld_admission
+#: model:op.admission,last_name:ld_admission.op_admission_6
+msgid "Aybar"
+msgstr "Aybar"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__batch_id
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_search
+msgid "Batch"
+msgstr "Partija"
+
+#. module: ld_admission
+#: model:op.admission,last_name:ld_admission.op_admission_18
+msgid "Bennett"
+msgstr "Bennettas"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__birth_date
+msgid "Birth Date"
+msgstr "Gimimo data"
+
+#. module: ld_admission
+#. odoo-python
+#: code:addons/ld_admission/models/admission.py:0
+#, python-format
+msgid "Birth Date can't be greater than current date!"
+msgstr "Gimimo data negali būti didesnė už dabartinę datą!"
+
+#. module: ld_admission
+#: model:op.admission,last_name:ld_admission.op_admission_7
+msgid "Bitar"
+msgstr "Bitaras"
+
+#. module: ld_admission
+#: model:op.admission,last_name:ld_admission.op_admission_3
+msgid "Boon"
+msgstr "Boon"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.admission_analysis_form
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_register_form
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#. module: ld_admission
+#: model:ir.model.fields.selection,name:ld_admission.selection__op_admission__state__cancel
+#: model:ir.model.fields.selection,name:ld_admission.selection__op_admission_register__state__cancel
+msgid "Cancelled"
+msgstr "Atšauktas"
+
+#. module: ld_admission
+#: model:op.admission,last_name:ld_admission.op_admission_10
+msgid "Chaudhri"
+msgstr "Chaudhri"
+
+#. module: ld_admission
+#: model:op.admission,last_name:ld_admission.op_admission_2
+msgid "Chua"
+msgstr "Chua"
+
+#. module: ld_admission
+#: model:op.admission,last_name:ld_admission.op_admission_5
+msgid "Cisse"
+msgstr "Cisse"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__city
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "City"
+msgstr "Miestas"
+
+#. module: ld_admission
+#: model:op.admission,last_name:ld_admission.op_admission_20
+msgid "Clark"
+msgstr "Clarkas"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__company_id
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__company_id
+msgid "Company"
+msgstr "Įmonė"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_register_form
+msgid "Confirm"
+msgstr "Patvirtinti"
+
+#. module: ld_admission
+#: model:ir.model.fields.selection,name:ld_admission.selection__op_admission__state__confirm
+#: model:ir.model.fields.selection,name:ld_admission.selection__op_admission_register__state__confirm
+msgid "Confirmed"
+msgstr "Patvirtinta"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__country_id
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "Country"
+msgstr "Šalis"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_admission_analysis__course_id
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__course_id
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__course_id
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_register_search
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_search
+msgid "Course"
+msgstr "Kursas"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_graph
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_pivot
+msgid "Course By Admission"
+msgstr "Kursas priėmimo metu"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_registration_graph
+msgid "Course By Admission Register"
+msgstr "Kursas pagal priėmimo registrą"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__product_id
+msgid "Course Fees"
+msgstr "Kursų mokesčiai"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_admission_analysis__create_uid
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__create_uid
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__create_uid
+msgid "Created by"
+msgstr "Sukurta"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_admission_analysis__create_date
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__create_date
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__create_date
+msgid "Created on"
+msgstr "Sukurtas"
+
+#. module: ld_admission
+#: model:op.admission,last_name:ld_admission.op_admission_8
+msgid "Damian"
+msgstr "Damianas"
+
+#. module: ld_admission
+#: model:op.admission,last_name:ld_admission.op_admission_1
+#: model:op.admission,last_name:ld_admission.op_admission_4
+msgid "Dani"
+msgstr "Dani"
+
+#. module: ld_admission
+#: model:op.admission,first_name:ld_admission.op_admission_16
+msgid "Daniel"
+msgstr "Danielius"
+
+#. module: ld_admission
+#: model:op.admission,name:ld_admission.op_admission_16
+msgid "Daniel W Fostar"
+msgstr "Danielis W Fostaras"
+
+#. module: ld_admission
+#: model:op.admission,first_name:ld_admission.op_admission_7
+msgid "Dawud"
+msgstr "Dawudas"
+
+#. module: ld_admission
+#: model:op.admission,name:ld_admission.op_admission_7
+msgid "Dawud L Bitar"
+msgstr "Dawud L Bitar"
+
+#. module: ld_admission
+#: model:op.admission,first_name:ld_admission.op_admission_11
+msgid "Deepak"
+msgstr "Deepak"
+
+#. module: ld_admission
+#: model:op.admission,name:ld_admission.op_admission_11
+msgid "Deepak K Jha"
+msgstr "Deepak k Jha"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__discount
+msgid "Discount (%)"
+msgstr "Nuolaida (%)"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_admission_analysis__display_name
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__display_name
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__display_name
+msgid "Display Name"
+msgstr "Rodomas pavadinimas"
+
+#. module: ld_admission
+#: model:ir.model.fields.selection,name:ld_admission.selection__op_admission__state__done
+#: model:ir.model.fields.selection,name:ld_admission.selection__op_admission_register__state__done
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_register_form
+msgid "Done"
+msgstr "padaryta"
+
+#. module: ld_admission
+#: model:ir.model.fields.selection,name:ld_admission.selection__op_admission__state__draft
+#: model:ir.model.fields.selection,name:ld_admission.selection__op_admission_register__state__draft
+msgid "Draft"
+msgstr "Juodraštis"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__due_date
+msgid "Due Date"
+msgstr "Terminas"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "Educational Detail"
+msgstr "Švietimo detalė"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__email
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "Email"
+msgstr "El. Paštas"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_admission_analysis__end_date
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__end_date
+msgid "End Date"
+msgstr "Pabaigos data"
+
+#. module: ld_admission
+#. odoo-python
+#: code:addons/ld_admission/models/admission_register.py:0
+#: code:addons/ld_admission/wizard/admission_analysis_wizard.py:0
+#, python-format
+msgid "End Date cannot be set before Start Date."
+msgstr "Pabaigos data negali būti nustatyta anksčiau nei pradžios data"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "Enroll"
+msgstr "Registruoti"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_search
+msgid "Enrolled"
+msgstr "Įsitraukė"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__family_business
+msgid "Family Business"
+msgstr "Šeimos reikalai"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__family_income
+msgid "Family Income"
+msgstr "Šeimos pajamos"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__fees
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_register_search
+msgid "Fees"
+msgstr "Mokesčiai"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__fees_start_date
+msgid "Fees Start Date"
+msgstr "Mokesčių pradžios data"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__fees_term_id
+msgid "Fees Term"
+msgstr "Mokesčių terminas"
+
+#. module: ld_admission
+#: model:ir.model.fields.selection,name:ld_admission.selection__op_admission__gender__f
+msgid "Female"
+msgstr "Moteris"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__first_name
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "First Name"
+msgstr "Pirmas vardas"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__message_follower_ids
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__message_follower_ids
+msgid "Followers"
+msgstr "Pasekėjai"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__message_partner_ids
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Stebėtojai (partneriai)"
+
+#. module: ld_admission
+#: model:ir.model.fields,help:ld_admission.field_op_admission__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Šrifto nuostabi piktograma, pvz. FA užduotys"
+
+#. module: ld_admission
+#: model:op.admission,last_name:ld_admission.op_admission_16
+msgid "Fostar"
+msgstr "Fostar"
+
+#. module: ld_admission
+#: model:op.admission,first_name:ld_admission.op_admission_22
+msgid "Gavin"
+msgstr "Gavinas"
+
+#. module: ld_admission
+#: model:op.admission,name:ld_admission.op_admission_22
+msgid "Gavin K Robinson"
+msgstr "Gavinas K Robinsonas"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__gender
+msgid "Gender"
+msgstr "Lytis"
+
+#. module: ld_admission
+#: model:op.admission,first_name:ld_admission.op_admission_19
+msgid "Grace"
+msgstr "Malonė"
+
+#. module: ld_admission
+#: model:op.admission,name:ld_admission.op_admission_19
+msgid "Grace E Palmer"
+msgstr ""
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_register_search
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_search
+msgid "Group By..."
+msgstr "Grupuoti pagal..."
+
+#. module: ld_admission
+#: model:op.admission,first_name:ld_admission.op_admission_21
+msgid "Hannah"
+msgstr ""
+
+#. module: ld_admission
+#: model:op.admission,name:ld_admission.op_admission_21
+msgid "Hannah J Walker"
+msgstr ""
+
+#. module: ld_admission
+#: model:op.admission,first_name:ld_admission.op_admission_14
+msgid "Hardik"
+msgstr "Hardikas"
+
+#. module: ld_admission
+#: model:op.admission,name:ld_admission.op_admission_14
+msgid "Hardik S Sharma"
+msgstr ""
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__has_message
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__has_message
+msgid "Has Message"
+msgstr "Turi pranešimą"
+
+#. module: ld_admission
+#: model:op.admission,last_name:ld_admission.op_admission_15
+msgid "Hasnandani"
+msgstr ""
+
+#. module: ld_admission
+#: model:op.admission,first_name:ld_admission.op_admission_12
+msgid "Hung"
+msgstr "Pakabintas"
+
+#. module: ld_admission
+#: model:op.admission,name:ld_admission.op_admission_12
+msgid "Hung K Lan"
+msgstr "Pakabintas k lan"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_admission_analysis__id
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__id
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__id
+msgid "ID"
+msgstr "Id"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__activity_exception_icon
+msgid "Icon"
+msgstr "Piktograma"
+
+#. module: ld_admission
+#: model:ir.model.fields,help:ld_admission.field_op_admission__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Piktograma, nurodanti išimties veiklą."
+
+#. module: ld_admission
+#: model:ir.model.fields,help:ld_admission.field_op_admission__message_needaction
+#: model:ir.model.fields,help:ld_admission.field_op_admission_register__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Jei patikrinsite, nauji pranešimai reikalauja jūsų dėmesio."
+
+#. module: ld_admission
+#: model:ir.model.fields,help:ld_admission.field_op_admission__message_has_error
+#: model:ir.model.fields,help:ld_admission.field_op_admission__message_has_sms_error
+#: model:ir.model.fields,help:ld_admission.field_op_admission_register__message_has_error
+#: model:ir.model.fields,help:ld_admission.field_op_admission_register__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Jei patikrinta, kai kurie pranešimai turi pristatymo klaidą."
+
+#. module: ld_admission
+#. odoo-python
+#: code:addons/ld_admission/models/admission.py:0
+#, python-format
+msgid "Import Template for Admission"
+msgstr "Importuoti priėmimo šabloną"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__is_student
+msgid "Is Already Student"
+msgstr "Jau yra studentas"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__message_is_follower
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__message_is_follower
+msgid "Is Follower"
+msgstr "Yra sekėjas"
+
+#. module: ld_admission
+#: model:op.admission,first_name:ld_admission.op_admission_20
+msgid "Isaac"
+msgstr "Izaokas"
+
+#. module: ld_admission
+#: model:op.admission,name:ld_admission.op_admission_20
+msgid "Isaac F Clark"
+msgstr "Izaokas F Clarkas"
+
+#. module: ld_admission
+#: model:op.admission,first_name:ld_admission.op_admission_23
+msgid "Jayden"
+msgstr "Jaydenas"
+
+#. module: ld_admission
+#: model:op.admission,name:ld_admission.op_admission_23
+msgid "Jayden N Moore"
+msgstr ""
+
+#. module: ld_admission
+#: model:op.admission,last_name:ld_admission.op_admission_11
+msgid "Jha"
+msgstr ""
+
+#. module: ld_admission
+#: model:op.admission,last_name:ld_admission.op_admission_12
+msgid "Lan"
+msgstr ""
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_admission_analysis____last_update
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission____last_update
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register____last_update
+msgid "Last Modified on"
+msgstr "Paskutinį kartą modifikuotas"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__last_name
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "Last Name"
+msgstr "Pavardė"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_admission_analysis__write_uid
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__write_uid
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__write_uid
+msgid "Last Updated by"
+msgstr "Paskutinį kartą atnaujinta"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_admission_analysis__write_date
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__write_date
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__write_date
+msgid "Last Updated on"
+msgstr "Paskutinį kartą atnaujinta"
+
+#. module: ld_admission
+#: model:op.admission,first_name:ld_admission.op_admission_8
+msgid "Laura"
+msgstr ""
+
+#. module: ld_admission
+#: model:op.admission,name:ld_admission.op_admission_8
+msgid "Laura Z Damian"
+msgstr ""
+
+#. module: ld_admission
+#: model:op.admission,first_name:ld_admission.op_admission_3
+msgid "Liling"
+msgstr ""
+
+#. module: ld_admission
+#: model:op.admission,name:ld_admission.op_admission_3
+msgid "Liling I Boon"
+msgstr ""
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__message_main_attachment_id
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Pagrindinis priedas"
+
+#. module: ld_admission
+#: model:ir.model.fields.selection,name:ld_admission.selection__op_admission__gender__m
+msgid "Male"
+msgstr "Patinas"
+
+#. module: ld_admission
+#: model:op.admission,first_name:ld_admission.op_admission_18
+msgid "Mason"
+msgstr "Masonas"
+
+#. module: ld_admission
+#: model:op.admission,name:ld_admission.op_admission_18
+msgid "Mason D Bennett"
+msgstr "Masonas D Bennettas"
+
+#. module: ld_admission
+#: model:op.admission,first_name:ld_admission.op_admission_6
+msgid "Matthew"
+msgstr "Matas"
+
+#. module: ld_admission
+#: model:op.admission,name:ld_admission.op_admission_6
+msgid "Matthew K Aybar"
+msgstr ""
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__max_count
+msgid "Maximum No. of Admission"
+msgstr "Maksimalus priėmimo skaičius"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__message_has_error
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__message_has_error
+msgid "Message Delivery error"
+msgstr "Pranešimo pristatymo klaida"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__message_ids
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__message_ids
+msgid "Messages"
+msgstr "Pranešimai"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__middle_name
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "Middle Name"
+msgstr "Antras vardas"
+
+#. module: ld_admission
+#. odoo-python
+#: code:addons/ld_admission/models/admission_register.py:0
+#, python-format
+msgid "Min Admission can't be greater than Max Admission"
+msgstr "Minimalus įėjimas negali būti didesnis nei maksimalus įėjimas"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__min_count
+msgid "Minimum No. of Admission"
+msgstr "Minimalus priėmimo skaičius"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__minimum_age_criteria
+msgid "Minimum Required Age(Years)"
+msgstr "Minimalus reikiamas amžius (metai)"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__mobile
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "Mobile"
+msgstr "Mobilusis"
+
+#. module: ld_admission
+#: model:op.admission,last_name:ld_admission.op_admission_23
+msgid "Moore"
+msgstr "Moore'as"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Mano veiklos terminas"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__name
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__name
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "Name"
+msgstr "vardas"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Kitas veiklos terminas"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__activity_summary
+msgid "Next Activity Summary"
+msgstr "Kitos veiklos santrauka"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__activity_type_id
+msgid "Next Activity Type"
+msgstr "Kitas veiklos tipas"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__nbr
+msgid "No of Admission"
+msgstr "Nėra priėmimo"
+
+#. module: ld_admission
+#. odoo-python
+#: code:addons/ld_admission/models/admission_register.py:0
+#, python-format
+msgid "No of Admission should be positive!"
+msgstr "Priėmimo skaičius turi būti teigiamas!"
+
+#. module: ld_admission
+#. odoo-python
+#: code:addons/ld_admission/models/admission.py:0
+#, python-format
+msgid "Not Eligible for Admission minimum required age is : %s "
+msgstr "Netinkama priimti. Minimalus būtinas amžius yra: %s"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__message_needaction_counter
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Veiksmų skaičius"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__message_has_error_counter
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__message_has_error_counter
+msgid "Number of errors"
+msgstr "Klaidų skaičius"
+
+#. module: ld_admission
+#: model:ir.model.fields,help:ld_admission.field_op_admission__message_needaction_counter
+#: model:ir.model.fields,help:ld_admission.field_op_admission_register__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Pranešimų, kuriems reikalingas veiksmas, skaičius"
+
+#. module: ld_admission
+#: model:ir.model.fields,help:ld_admission.field_op_admission__message_has_error_counter
+#: model:ir.model.fields,help:ld_admission.field_op_admission_register__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Pranešimų su pristatymo klaida skaičius"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "Open Student Profile"
+msgstr "Atviras studento profilis"
+
+#. module: ld_admission
+#: model:ir.model.fields.selection,name:ld_admission.selection__op_admission__gender__o
+msgid "Other"
+msgstr "Other"
+
+#. module: ld_admission
+#: model:op.admission,last_name:ld_admission.op_admission_19
+msgid "Palmer"
+msgstr "Palmeris"
+
+#. module: ld_admission
+#: model:op.admission,last_name:ld_admission.op_admission_9
+msgid "Parikh"
+msgstr ""
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__partner_id
+msgid "Partner"
+msgstr "Partneris"
+
+#. module: ld_admission
+#: model:ir.model.fields.selection,name:ld_admission.selection__op_admission__state__pending
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "Pending"
+msgstr "Kol"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "Personal Detail"
+msgstr "Asmeninės detalės"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__phone
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "Phone"
+msgstr "Telefonas"
+
+#. module: ld_admission
+#. odoo-python
+#: code:addons/ld_admission/models/admission.py:0
+#, python-format
+msgid "Please fill in the mobile number"
+msgstr "Prašome įrašyti mobiliojo telefono numerį"
+
+#. module: ld_admission
+#: model:op.admission,first_name:ld_admission.op_admission_4
+msgid "Prachi"
+msgstr ""
+
+#. module: ld_admission
+#: model:op.admission,name:ld_admission.op_admission_4
+msgid "Prachi U Dani"
+msgstr ""
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__prev_course_id
+msgid "Previous Course"
+msgstr "Ankstesnis kursas"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__prev_institute_id
+msgid "Previous Institute"
+msgstr "Ankstesnis institutas"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__prev_result
+msgid "Previous Result"
+msgstr "Ankstesnis rezultatas"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.admission_analysis_form
+msgid "Print"
+msgstr "Spausdinti"
+
+#. module: ld_admission
+#: model:op.admission,first_name:ld_admission.op_admission_13
+msgid "Qiang"
+msgstr ""
+
+#. module: ld_admission
+#: model:op.admission,name:ld_admission.op_admission_13
+msgid "Qiang W Sim"
+msgstr "Qiang w sim"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_search
+msgid "Register"
+msgstr "Registruotis"
+
+#. module: ld_admission
+#: model:ir.actions.act_window,name:ld_admission.act_open_op_admission_view
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_register_form
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_search
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_tree
+msgid "Registration"
+msgstr "Registracija"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "Reject"
+msgstr "Atmesti"
+
+#. module: ld_admission
+#: model:ir.model.fields.selection,name:ld_admission.selection__op_admission__state__reject
+msgid "Rejected"
+msgstr "Atstumtas"
+
+#. module: ld_admission
+#: model:ir.ui.menu,name:ld_admission.menu_admission_report_root
+msgid "Reports"
+msgstr "Pranešimai"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__activity_user_id
+msgid "Responsible User"
+msgstr "Atsakingas vartotojas"
+
+#. module: ld_admission
+#: model:op.admission,first_name:ld_admission.op_admission_9
+msgid "Rishita"
+msgstr ""
+
+#. module: ld_admission
+#: model:op.admission,name:ld_admission.op_admission_9
+msgid "Rishita T Parikh"
+msgstr ""
+
+#. module: ld_admission
+#: model:op.admission,last_name:ld_admission.op_admission_22
+msgid "Robinson"
+msgstr "Robinsonas"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__message_has_sms_error
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "SMS pristatymo klaida"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_register_form
+msgid "Set to Draft"
+msgstr "Nustatykite juodraštį"
+
+#. module: ld_admission
+#: model:op.admission,last_name:ld_admission.op_admission_14
+msgid "Sharma"
+msgstr "Šarma"
+
+#. module: ld_admission
+#: model:op.admission,first_name:ld_admission.op_admission_15
+msgid "Shweta"
+msgstr ""
+
+#. module: ld_admission
+#: model:op.admission,name:ld_admission.op_admission_15
+msgid "Shweta O Hasnandani"
+msgstr "Shweta o hasnandani"
+
+#. module: ld_admission
+#: model:op.admission,last_name:ld_admission.op_admission_13
+msgid "Sim"
+msgstr "SIM"
+
+#. module: ld_admission
+#: model:op.admission,last_name:ld_admission.op_admission_17
+msgid "Smith"
+msgstr "Kalvis"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_register_form
+msgid "Start Admission"
+msgstr "Pradėti priėmimą"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_register_form
+msgid "Start Application"
+msgstr "Pradėti paraišką"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_admission_analysis__start_date
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__start_date
+msgid "Start Date"
+msgstr "Pradžios data"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__state
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "State"
+msgstr "Būsena"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__state_id
+msgid "States"
+msgstr "Būsenos"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__state
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_register_search
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_search
+msgid "Status"
+msgstr "Būsena"
+
+#. module: ld_admission
+#: model:ir.model.fields,help:ld_admission.field_op_admission__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Būsena, pagrįsta veikla\n"
+"Vykstanti: terminas jau praėjo\n"
+"Šiandien: veiklos data yra šiandien\n"
+"Suplanuota: būsima veikla."
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__street
+msgid "Street"
+msgstr "Gatvė"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "Street 2..."
+msgstr "2 gatvė ..."
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "Street..."
+msgstr "Gatvė ..."
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__street2
+msgid "Street2"
+msgstr "2 gatvė"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__student_id
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "Student"
+msgstr "Studentas"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.report_admission_analysis
+msgid "Student Name"
+msgstr "Studento vardas"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "Submit"
+msgstr "Pateikti"
+
+#. module: ld_admission
+#: model:ir.model.fields.selection,name:ld_admission.selection__op_admission__state__submit
+msgid "Submitted"
+msgstr "Pateikta"
+
+#. module: ld_admission
+#: model:op.admission,first_name:ld_admission.op_admission_1
+msgid "Sumita"
+msgstr ""
+
+#. module: ld_admission
+#: model:op.admission,name:ld_admission.op_admission_1
+msgid "Sumita S Dani"
+msgstr ""
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__academic_term_id
+msgid "Terms"
+msgstr "Sąlygos"
+
+#. module: ld_admission
+#. odoo-python
+#: code:addons/ld_admission/models/admission.py:0
+#, python-format
+msgid "The value of the deposit amount must be positive."
+msgstr "Indėlio sumos vertė turi būti teigiama"
+
+#. module: ld_admission
+#. odoo-python
+#: code:addons/ld_admission/models/admission.py:0
+#, python-format
+msgid "There is no income account defined for this product: \"%s\".You may have to install a chart of account from Accounting app, settings menu."
+msgstr "Šiam produktui neapibrėžta pajamų sąskaita: \"%s\". Gali tekti įdiegti sąskaitų planą iš Apskaitos programos, nustatymų meniu."
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__title
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "Title"
+msgstr "Pavadinimas"
+
+#. module: ld_admission
+#: model:ir.model.fields,help:ld_admission.field_op_admission__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Įrašų veiklos išimties tipas."
+
+#. module: ld_admission
+#: model:op.admission,first_name:ld_admission.op_admission_5
+msgid "Valdez"
+msgstr "Valdezas"
+
+#. module: ld_admission
+#: model:op.admission,name:ld_admission.op_admission_5
+msgid "Valdez L Cisse"
+msgstr ""
+
+#. module: ld_admission
+#: model:op.admission,last_name:ld_admission.op_admission_21
+msgid "Walker"
+msgstr "Walkeris"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__website_message_ids
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission_register__website_message_ids
+msgid "Website Messages"
+msgstr "Svetainės pranešimai"
+
+#. module: ld_admission
+#: model:ir.model.fields,help:ld_admission.field_op_admission__website_message_ids
+#: model:ir.model.fields,help:ld_admission.field_op_admission_register__website_message_ids
+msgid "Website communication history"
+msgstr "Tinklalapio komunikacijos istorija"
+
+#. module: ld_admission
+#: model:op.admission,first_name:ld_admission.op_admission_2
+msgid "Xun"
+msgstr ""
+
+#. module: ld_admission
+#: model:op.admission,name:ld_admission.op_admission_2
+msgid "Xun K Chua"
+msgstr "Xun k chua"
+
+#. module: ld_admission
+#: model_terms:ir.ui.view,arch_db:ld_admission.view_op_admission_form
+msgid "ZIP"
+msgstr "Užtrauktukas"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__zip
+msgid "Zip"
+msgstr "Užtrauktukas"
+
+#. module: ld_admission
+#: model:ir.model.fields,field_description:ld_admission.field_op_admission__image
+msgid "image"
+msgstr "vaizdas"
