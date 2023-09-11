@@ -1,0 +1,147 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* ld_parent
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-05 04:59+0000\n"
+"PO-Revision-Date: 2019-06-05 04:59+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ld_parent
+#: sql_constraint:op.parent:0
+msgid "Can not create parent multiple times.!"
+msgstr ""
+
+#. module: ld_parent
+#: model_terms:ir.ui.view,arch_db:ld_parent.view_op_parent_form
+msgid "Create Parent User"
+msgstr ""
+
+#. module: ld_parent
+#: model:ir.model.fields,field_description:ld_parent.field_op_parent__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: ld_parent
+#: model:ir.model.fields,field_description:ld_parent.field_op_parent__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: ld_parent
+#: model:ir.model.fields,field_description:ld_parent.field_op_parent__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: ld_parent
+#: model_terms:ir.ui.view,arch_db:ld_parent.view_op_parent_search
+msgid "Group By..."
+msgstr ""
+
+#. module: ld_parent
+#: model:ir.model.fields,field_description:ld_parent.field_op_parent__id
+msgid "ID"
+msgstr ""
+
+#. module: ld_parent
+#: code:addons/ld_parent/models/parent.py:155
+#, python-format
+msgid "Invalid Action!\n"
+" Parent can not             create Subject Registration!"
+msgstr ""
+
+#. module: ld_parent
+#: code:addons/ld_parent/models/parent.py:162
+#, python-format
+msgid "Invalid Action!\n"
+" Parent can not edit             Subject Registration!"
+msgstr ""
+
+#. module: ld_parent
+#: model:ir.model.fields,field_description:ld_parent.field_op_parent____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: ld_parent
+#: model:ir.model.fields,field_description:ld_parent.field_op_parent__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: ld_parent
+#: model:ir.model.fields,field_description:ld_parent.field_op_parent__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: ld_parent
+#: model:ir.model.fields,field_description:ld_parent.field_op_parent__mobile
+msgid "Mobile"
+msgstr ""
+
+#. module: ld_parent
+#: model:ir.model.fields,field_description:ld_parent.field_op_parent__name
+#: model_terms:ir.ui.view,arch_db:ld_parent.view_op_parent_search
+msgid "Name"
+msgstr ""
+
+#. module: ld_parent
+#: model:ir.model,name:ld_parent.model_op_parent
+#: model:ir.model.fields,field_description:ld_parent.field_op_student__parent_ids
+#: model_terms:ir.ui.view,arch_db:ld_parent.view_op_parent_form
+#: model_terms:ir.ui.view,arch_db:ld_parent.view_op_parent_search
+#: model_terms:ir.ui.view,arch_db:ld_parent.view_op_parent_tree
+#: model:res.groups,name:ld_parent.group_op_parent
+msgid "Parent"
+msgstr ""
+
+#. module: ld_parent
+#: model_terms:ir.ui.view,arch_db:ld_parent.view_op_parent_form
+msgid "Parent Name"
+msgstr ""
+
+#. module: ld_parent
+#: model:ir.actions.act_window,name:ld_parent.act_open_op_parent_view
+#: model:ir.ui.menu,name:ld_parent.menu_op_parent_root
+#: model:ir.ui.menu,name:ld_parent.menu_op_parent_sub_parent
+#: model_terms:ir.ui.view,arch_db:ld_parent.parent_student_form_view
+msgid "Parents"
+msgstr ""
+
+#. module: ld_parent
+#: model:ir.model,name:ld_parent.model_op_student
+msgid "Student"
+msgstr ""
+
+#. module: ld_parent
+#: model:ir.model.fields,field_description:ld_parent.field_op_parent__student_ids
+#: model_terms:ir.ui.view,arch_db:ld_parent.view_op_parent_form
+msgid "Student(s)"
+msgstr ""
+
+#. module: ld_parent
+#: model:ir.model.fields,help:ld_parent.field_op_parent__user_id
+msgid "The internal user in charge of this contact."
+msgstr ""
+
+#. module: ld_parent
+#: code:addons/ld_parent/models/parent.py:81
+#, python-format
+msgid "Update parent email id first."
+msgstr ""
+
+#. module: ld_parent
+#: model:ir.model.fields,field_description:ld_parent.field_op_parent__user_id
+msgid "User"
+msgstr ""
+
+#. module: ld_parent
+#: model:ir.model,name:ld_parent.model_op_subject_registration
+msgid "op.subject.registration"
+msgstr ""
+

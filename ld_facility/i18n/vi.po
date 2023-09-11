@@ -1,0 +1,86 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: lderptranslation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-28 11:18+0000\n"
+"PO-Revision-Date: 2018-03-20 08:40-0400\n"
+"Last-Translator: akkicode <aakash@ld.org>\n"
+"Language-Team: Vietnamese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: lderptranslation\n"
+"X-Crowdin-Language: vi\n"
+"X-Crowdin-File: /master/ld_facility/i18n/ld_facility.pot\n"
+"Language: vi_VN\n"
+
+#. module: ld_facility
+#: view:op.facility:ld_facility.view_op_facility_search
+#: field:op.facility,Code:0
+msgid "Code"
+msgstr "Mã số"
+
+#. module: ld_facility
+#: field:op.facility,create_uid:0
+#: field:op.facility.line,create_uid:0
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: ld_facility
+#: field:op.facility,create_date:0
+#: field:op.facility.line,create_date:0
+msgid "Created on"
+msgstr "Tạo ngày"
+
+#. module: ld_facility
+#: model:ir.actions.act_window,name:ld_facility.act_open_op_facility_view
+#: model:ir.ui.menu,name:ld_facility.menu_op_facility_sub
+#: view:op.facility.line:ld_facility.op_facility_line_form_view
+#: view:op.facility.line:ld_facility.op_facility_line_tree_view
+msgid "Facilities"
+msgstr "Tiện nghi"
+
+#. module: ld_facility
+#: view:op.facility:ld_facility.view_op_facility_form
+#: view:op.facility:ld_facility.view_op_facility_search
+#: view:op.facility:ld_facility.view_op_facility_tree
+#: field:op.facility.line,facility_id:0
+msgid "Facility"
+msgstr "Cơ sở"
+
+#. module: ld_facility
+#: view:op.facility:ld_facility.view_op_facility_search
+msgid "Group By..."
+msgstr "Nhóm theo..."
+
+#. module: ld_facility
+#: field:op.facility,id:0
+#: field:op.facility.line,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: ld_facility
+#: field:op.facility,write_uid:0
+#: field:op.facility.line,write_uid:0
+msgid "Last Updated by"
+msgstr "Cập Nhật lần cuối bởi"
+
+#. module: ld_facility
+#: field:op.facility,write_date:0
+#: field:op.facility.line,write_date:0
+msgid "Last Updated on"
+msgstr "Lần cập nhật cuối"
+
+#. module: ld_facility
+#: view:op.facility:ld_facility.view_op_facility_search
+#: field:op.facility,Name:0
+msgid "Name"
+msgstr "Tên"
+
+#. module: ld_facility
+#: field:op.facility.line,quantity:0
+msgid "Quantity"
+msgstr "Số lượng"
+
