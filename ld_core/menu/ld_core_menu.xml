@@ -13,7 +13,7 @@
     <menuitem id="menu_op_school_root"
               name="Education ERP"
               sequence="10"
-              web_icon="ld_core,static/description/icon.png"
+              web_icon="ld_core,static/description/erp.png"
               groups="group_op_back_office_admin"/>
 
     <menuitem id="menu_op_school_main"

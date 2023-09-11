@@ -4,7 +4,7 @@
         <menuitem id="menu_op_library_root"
                   name="Library"
                   sequence="80"
-                  web_icon="ld_library,static/description/icon.png"
+                  web_icon="ld_library,static/description/lib.png"
                   groups="group_op_library,ld_core.group_op_faculty,ld_core.group_op_back_office_admin"/>
 
         <menuitem id="menu_library_medias"

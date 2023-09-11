@@ -4,7 +4,7 @@
         <menuitem id="menu_op_exam_root"
                   name="Exams"
                   sequence="70"
-                  web_icon="ld_exam,static/description/icon.png"/>
+                  web_icon="ld_exam,static/description/xam.png"/>
 
         <menuitem id="menu_op_school_exam_result"
                   name="Exams"
