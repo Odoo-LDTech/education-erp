@@ -19,103 +19,106 @@
                         <br/>
                         <br/>
                         <div class="oe_structure"/>
-                        <t t-foreach="get_data" t-as="o">
+                        <t t-foreach="docs" t-as="o">
                             <div class="font">
                                 <div class="page">
-                                    <br></br>
-                                    <br></br>
-                                    <br></br>
+                                    <br/>
+                                    <br/>
+                                    <br/>
                                     <div class="text-center">
-                                        <h3>
+                                        <h1>
                                             <b>Hall Ticket</b>
-                                        </h3>
-                                        (
-                                        <span t-out="o['exam'] if o['exam'] else ''"/>
-                                        <span t-out="o['exam_code'] if o['exam_code'] else ''"/>
-                                        )
+                                        </h1>
                                     </div>
-                                    <br></br>
+                                    <br/>
 
-                                    <table width="100%" style="font-size:14px;">
-                                        <tbody>
+                                    <table class="table table-bordered">
+                                        <thead class="text-center"
+                                               style="background-color:#eeeeee; font-size:14px; font-weight:600;">
+                                            <th class="text-center">Student Image</th>
+                                            <th class="text-center">Student Name</th>
+                                            <th class="text-center">Exam</th>
+                                            <th class="text-center">Course</th>
+                                            <th class="text-center">Room Number</th>
+                                        </thead>
+                                        <tbody class="text-center" style="font-size:12px;"
+                                               t-foreach="o.exam_session_id.exam_ids.attendees_line"
+                                               t-as="attendee">
+
                                             <tr>
-                                                <td class="py-2">
-                                                    <table width="100%">
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>
-                                                                    <b>Student Name :</b>
-                                                                    <span t-esc="o['student']"/>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <b>Roll No :</b>
-                                                                    <span t-out="o['roll_number']  if  o['roll_number']  else ''"/>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <b>Course :</b>
-                                                                    <span t-out="o['course']  if  o['course']  else ''"/>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
+                                                <td class="text-right">
+                                                    <img alt="Student Image"
+                                                         style="padding: 2px;"
+                                                         t-att-src="image_data_uri(attendee.student_id.image_1920)"
+                                                         width="60"/>
+                                                </td>
+                                                <!--                                                <td style="padding: 15px">-->
+                                                <!--                                                    <b>Student Name:</b>-->
+                                                <!--                                                </td>-->
+                                                <td style="padding: 15px">
+                                                    <span t-esc="attendee.student_id.name"/>
                                                 </td>
 
-                                                <td>
-                                                    <table width="100%">
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>
+                                                <!--                                                <td style="padding: 15px">-->
+                                                <!--                                                    <b>Exam:</b>-->
+                                                <!--                                                </td>-->
+                                                <td style="padding: 15px">
+                                                    <span t-esc="attendee.exam_id.name"/>
+                                                </td>
 
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="text-right">
-                                                                    <img t-if="o['image']" alt="Student Image"
-                                                                         style="padding-top: 16px; padding-bottom: 16px; "
-                                                                         t-att-src="image_data_uri(o['image'])"
-                                                                         width="75"/>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
+                                                <!--                                                <td style="padding: 15px">-->
+                                                <!--                                                    <b>Course:</b>-->
+                                                <!--                                                </td>-->
+                                                <td style="padding: 15px">
+                                                    <span t-esc="attendee.course_id.name"/>
+                                                </td>
+
+                                                <!--                                                <td style="padding: 15px">-->
+                                                <!--                                                    <b>Room Number:</b>-->
+                                                <!--                                                </td>-->
+                                                <td style="padding: 15px">
+                                                    <span t-esc="attendee.room_id.name"/>
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <br></br>
-                                    <br></br>
+                                    <br/>
+                                    <br/>
                                     <table class="table table-bordered">
                                         <thead class="text-center"
                                                style="background-color:#eeeeee; font-size:14px; font-weight:600;">
+                                            <th class="text-center">Exam</th>
+                                            <th class="text-center">Exam code</th>
                                             <th class="text-center">Subject</th>
-                                            <th class="text-center">Date</th>
-                                            <th class="text-center">Time</th>
-                                            <th class="text-center">Supervisor Sign</th>
+                                            <th class="text-center">Start Time</th>
+                                            <th class="text-center">End Time</th>
                                         </thead>
                                         <tbody class="text-center" style="font-size:12px;">
-                                            <tr t-foreach="o['line']" t-as='s'>
+                                            <tr t-foreach="o.exam_session_id.exam_ids" t-as='s'>
+
                                                 <td>
-                                                    <span t-out="s['subject'] if  s['subject']  else ''"/>
+                                                    <span t-out="s.name if  s.name else ''"/>
                                                 </td>
                                                 <td>
-                                                    <span t-out="s['date'] if  s['date'] else ''" t-options="{'widget':'date'}"/>
+                                                    <span t-out="s.exam_code if  s.exam_code else ''"/>
                                                 </td>
                                                 <td>
-                                                    <span t-esc="s['time']"/>
+                                                    <span t-out="s.subject_id.name if  s.subject_id.name else ''"/>
                                                 </td>
                                                 <td>
-                                                    <span t-out="s['sup_sign']  if  s['sup_sign']  else ''"/>
+                                                    <span t-out="s.start_time if  s.start_time else ''"
+                                                          t-options="{'widget':'date'}"/>
+                                                </td>
+                                                <td>
+                                                    <span t-out="s.end_time if  s.end_time else ''"
+                                                          t-options="{'widget':'date'}"/>
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                            <p style="page-break-after:always"></p>
+                            <p style="page-break-after:always"/>
                         </t>
                     </div>
                 </t>

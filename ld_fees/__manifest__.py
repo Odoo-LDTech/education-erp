@@ -29,7 +29,7 @@
     'complexity': "easy",
     'author': 'LDTECH',
     'website': 'http://www.ldtech.in',
-    'depends': ['ld_core', 'account'],
+    'depends': ['ld_core', 'account', 'base'],
     'data': [
         'security/op_security.xml',
         'security/ir.model.access.csv',

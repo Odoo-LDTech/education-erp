@@ -147,6 +147,59 @@ class OpStudentFeesDetails(models.Model):
                 'nodestroy': True
             }
         return value
+    def action_create_invoice_std(self):
+        record = self
+
+        invoice_line_ids = []
+        print('-----------1--------', invoice_line_ids)
+        total_amount = record.amount
+        print('-----------------2---------', total_amount)
+
+        for fees_element_line in record.fees_line_id.fees_element_line:
+            print('----------3-----------', record.fees_line_id)
+            print('----------4-----------', record.fees_line_id.fees_element_line)
+            print('----------5-----------', fees_element_line)
+            product_id = fees_element_line.product_id
+            print('-----------6--------', product_id)
+            # taxed_id = fees_element_line.product_id.taxes_id
+            product_share = fees_element_line.value  # Assuming this is the share value or percentage
+            print('---------7-----------', product_share)
+            disc_id = record.discount
+            # Calculate the amount for this product based on its share
+            product_amount = (total_amount * product_share) / 100  # Adjust the formula as needed
+            print('--------------8-------------', product_amount)
+            invoice_line = {
+                'product_id': product_id.id,
+                'name': product_id.name,  # You may need to adjust the field name
+                'quantity': 1,  # You may need to adjust this as needed
+                'price_unit': product_amount,
+                'discount': disc_id,
+                # 'tax_ids': taxed_id.id,
+            }
+            print('-----------9----------------', invoice_line)
+            invoice_line_ids.append((0, 0, invoice_line))
+            print('-----------10----------', invoice_line_ids)
+
+        context = {
+            'default_move_type': 'out_invoice',
+            'search_default_out_invoice': 1,
+            'default_partner_id': record.student_id.partner_id.id,
+            'default_invoice_line_ids': invoice_line_ids,
+        }
+        print('----------------1------------2-------------3---------', context)
+        self.write({'state': 'invoice'})
+        # self.write({'state': 'cancel'})
+        self.write({'invoice_id': 'name'})
+
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Invoice',
+            'res_model': 'account.move',
+            'context': context,
+            'view_mode': 'form',
+            'view_type': 'form',
+            'target': 'current',
+        }
 
 
 class OpStudent(models.Model):
