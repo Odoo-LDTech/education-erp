@@ -34,13 +34,43 @@ class OpParent(models.Model):
     active = fields.Boolean(default=True)
     relationship_id = fields.Many2one('op.parent.relationship',
                                       'Relation with Student', required=True)
+    
+    occupation = fields.Char(string='Occupation')
+    email = fields.Char(string='Email', domain="[('communication_preference', '=', 'email')]")
+    phone = fields.Char(string='Phone', domain="[('communication_preference', '=', 'phone')]")
+    related_email = fields.Char(string='Email', compute='_compute_related_email', store=True, readonly=False)
+    related_phone = fields.Char(string='Phone', compute='_compute_related_phone', store=True, readonly=False)
+    communication_preference = fields.Selection([
+        ('email', 'Email'),
+        ('phone', 'Phone'),
+    ], string='Communication Preference')
+    additional_notes = fields.Text(string='Additional Notes')
+    optional_relation = fields.Char(string='Optional Relation', help='Relationship with Student')
+    optional_name = fields.Char(string='Optional Name')
 
     _sql_constraints = [(
         'unique_parent',
         'unique(name)',
         'Can not create parent multiple times.!'
     )]
+    
+    @api.depends('communication_preference')
+    def _compute_related_email(self):
+        for record in self:
+            if record.communication_preference == 'email':
+                record.related_email = record.email
+            else:
+                record.related_email = False
 
+    @api.depends('communication_preference')
+    def _compute_related_phone(self):
+        for record in self:
+            if record.communication_preference == 'phone':
+                record.related_phone = record.phone
+            else:
+                record.related_phone = False
+
+                
     @api.onchange('name')
     def _onchange_name(self):
         self.user_id = self.name.user_id and self.name.user_id.id or False

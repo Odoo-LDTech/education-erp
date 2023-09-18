@@ -167,6 +167,16 @@
                                     </group>
                                 </group>
                             </page>
+                            <page name="education_details" string="Education Details" >
+                                <tree editable="bottom" >
+                                    <field name="course_detail_ids">
+                                        <tree>
+                                            <field name="course_id" readonly="1"/>
+                                            <field name="batch_id" readonly="1"/>
+                                        </tree>
+                                    </field>
+                                </tree>
+                            </page>
                         </notebook>
                     </sheet>
                     <div class="oe_chatter">

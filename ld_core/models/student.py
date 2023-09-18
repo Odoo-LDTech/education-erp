@@ -96,8 +96,8 @@ class OpStudent(models.Model):
     gr_no = fields.Char("GR Number", size=20)
     category_id = fields.Many2one('op.category', 'Category')
     course_detail_ids = fields.One2many('op.student.course', 'student_id',
-                                        'Course Details',
-                                        tracking=True)
+                                        'Education Details',
+                                        tracking=True,readonly=True)
     active = fields.Boolean(default=True)
 
     _sql_constraints = [(
