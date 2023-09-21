@@ -33,6 +33,7 @@
     'data': [
         'security/op_security.xml',
         'security/ir.model.access.csv',
+        'data/student_fees_cron.xml',
         'report/report_menu.xml',
         'report/fees_analysis_report_view.xml',
         'wizard/fees_detail_report_wizard_view.xml',

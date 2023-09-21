@@ -4,7 +4,7 @@
         <menuitem id="menu_op_faculty_root"
                   name="Faculties"
                   sequence="20"
-                  web_icon="ld_core,static/description/icon_faculty.png"/>
+                  web_icon="ld_core,static/description/icon_faculty.jpg"/>
 
         <menuitem id="menu_op_faculty_details"
                   name="Profile"

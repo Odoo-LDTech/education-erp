@@ -34,7 +34,11 @@
                                     <field name="state"/>
                                     <field name="invoice_id"/>
                                     <button name="action_create_invoice_std" string="Create Invoice" type="object"
-                                            class="btn-primary"/>
+                                            class="btn-primary"
+                                            attrs="{'invisible': [('state', 'in', ['invoice', 'cancel'])]}"/>
+                                    <button name="action_view_invoice" string="View Invoice" type="object"
+                                            class="btn-primary"
+                                            attrs="{'invisible': [('state', 'not in', ['invoice', 'cancel'])]}"/>
                                 </tree>
                             </field>
                         </tree>

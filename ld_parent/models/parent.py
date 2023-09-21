@@ -30,7 +30,7 @@ class OpParent(models.Model):
     name = fields.Many2one('res.partner', 'Name', required=True)
     user_id = fields.Many2one('res.users', string='User', store=True)
     student_ids = fields.Many2many('op.student', string='Student(s)')
-    mobile = fields.Char(string='Mobile', related='name.mobile')
+    mobile = fields.Char(string='Mobile', related='name.mobile', readonly=False)
     active = fields.Boolean(default=True)
     relationship_id = fields.Many2one('op.parent.relationship',
                                       'Relation with Student', required=True)
