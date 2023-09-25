@@ -34,9 +34,9 @@ class OpParent(models.Model):
     active = fields.Boolean(default=True)
     relationship_id = fields.Many2one('op.parent.relationship',
                                       'Relation with Student', required=True)
-    
+
     occupation = fields.Char(string='Occupation')
-    email = fields.Char(string='Email', domain="[('communication_preference', '=', 'email')]")
+    email = fields.Char(string='Email', domain="[('communication_preference', '=', 'email')]", related='name.email')
     phone = fields.Char(string='Phone', domain="[('communication_preference', '=', 'phone')]")
     related_email = fields.Char(string='Email', compute='_compute_related_email', store=True, readonly=False)
     related_phone = fields.Char(string='Phone', compute='_compute_related_phone', store=True, readonly=False)
@@ -53,7 +53,7 @@ class OpParent(models.Model):
         'unique(name)',
         'Can not create parent multiple times.!'
     )]
-    
+
     @api.depends('communication_preference')
     def _compute_related_email(self):
         for record in self:
@@ -70,7 +70,6 @@ class OpParent(models.Model):
             else:
                 record.related_phone = False
 
-                
     @api.onchange('name')
     def _onchange_name(self):
         self.user_id = self.name.user_id and self.name.user_id.id or False
@@ -131,6 +130,17 @@ class OpStudent(models.Model):
     _inherit = "op.student"
 
     parent_ids = fields.Many2many('op.parent', string='Parent')
+    parents_mail = fields.Char(string='Parents Email_ID', compute='_compute_parent_email', store=True)
+
+    @api.depends('parent_ids')
+    def _compute_parent_email(self):
+        for rec in self:
+            if rec.parent_ids:
+                emails = [parent.email for parent in rec.parent_ids if parent.name.email]
+                print('---------emails------', emails)
+                rec.parents_mail = ', '.join(emails)
+            else:
+                rec.parents_mail = ""
 
     @api.model_create_multi
     def create(self, vals):

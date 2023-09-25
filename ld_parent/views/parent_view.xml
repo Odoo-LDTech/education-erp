@@ -15,6 +15,9 @@
                         <span>Parents</span>
                     </button>
                 </xpath>
+                 <xpath expr="//field[@name='email']" position="after">
+                     <field name="parents_mail"/>
+                 </xpath>
             </field>
         </record>
 

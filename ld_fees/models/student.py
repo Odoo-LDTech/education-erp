@@ -44,7 +44,7 @@ class OpStudentFeesDetails(models.Model):
                     continue  # Skip sending the reminder email
             # Assuming that student's email is stored in student_id
             date_inv = record.date
-            student_email = record.student_id.email
+            student_email = record.student_id.parents_mail
             days_remaining = (record.date - today).days
             subject = f"Reminder: Invoice Submission (Due in {days_remaining} days)"
             body = (
@@ -58,30 +58,6 @@ class OpStudentFeesDetails(models.Model):
                 'body_html': body,
             }
             self.env['mail.mail'].create(email_values).send()
-
-    # def student_invoice_cron(self):
-    #     today = fields.Date.today()
-    #     five_days_from_today = today + timedelta(days=5)
-    #
-    #     # Find records where the invoice submission date is less than 5 days from today
-    #     records_to_notify = self.search([('date', '<', five_days_from_today)])
-    #
-    #     for record in records_to_notify:
-    #         # Assuming that student's email is stored in student_id
-    #         date_inv = record.date
-    #         student_email = record.student_id.email
-    #         days_remaining = (record.date - today).days
-    #         subject = f"Reminder: Invoice Submission (Due in {days_remaining} days)"
-    #         body = (f"Dear Sir/Madam,<br/><br/>This is a gentle reminder to submit your due amount on or before {date_inv}."
-    #                 f"<br/>You have {days_remaining} days remaining."
-    #                 f"<br/>"
-    #                 f"<br/>Best Regards.")
-    #         email_values = {
-    #             'subject': subject,
-    #             'email_to': student_email,
-    #             'body_html': body,
-    #         }
-    #         self.env['mail.mail'].create(email_values).send()
 
     fees_line_id = fields.Many2one('op.fees.terms.line', 'Fees Line')
     invoice_id = fields.Many2one('account.move', 'Invoice ID')
