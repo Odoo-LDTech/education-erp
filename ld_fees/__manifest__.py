@@ -29,10 +29,11 @@
     'complexity': "easy",
     'author': 'LDTECH',
     'website': 'http://www.ldtech.in',
-    'depends': ['ld_core', 'account'],
+    'depends': ['ld_core', 'account', 'base'],
     'data': [
         'security/op_security.xml',
         'security/ir.model.access.csv',
+        'data/student_fees_cron.xml',
         'report/report_menu.xml',
         'report/fees_analysis_report_view.xml',
         'wizard/fees_detail_report_wizard_view.xml',

@@ -67,7 +67,7 @@ class OpStudent(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _inherits = {"res.partner": "partner_id"}
 
-    first_name = fields.Char('First Name',  translate=True)
+    first_name = fields.Char('First Name', translate=True)
     middle_name = fields.Char('Middle Name', translate=True)
     last_name = fields.Char('Last Name', translate=True)
     birth_date = fields.Date('Birth Date')
@@ -96,9 +96,62 @@ class OpStudent(models.Model):
     gr_no = fields.Char("GR Number", size=20)
     category_id = fields.Many2one('op.category', 'Category')
     course_detail_ids = fields.One2many('op.student.course', 'student_id',
-                                        'Course Details',
-                                        tracking=True)
+                                        'Education Details',
+                                        tracking=True, readonly=True)
     active = fields.Boolean(default=True)
+    course_detail_ids = fields.One2many('op.student.course', 'student_id',
+                                        'Education Details',
+                                        tracking=True, readonly=True)
+
+    street = fields.Char(
+        'Street', size=256, readonly=True)
+    street2 = fields.Char(
+        'Street2', size=256, readonly=True)
+    is_same_street = fields.Boolean('Same as Street1', default=False)
+
+    city2 = fields.Char('City', size=64, readonly=True)
+    zip2 = fields.Char('Zip', size=8, readonly=True)
+    state_id2 = fields.Many2one(
+        'res.country.state', 'States', readonly=True)
+
+    country_id2 = fields.Many2one(
+        'res.country', 'Country', readonly=True)
+
+    pan_no = fields.Char(string="Pan", size=10)
+    adhaar_no = fields.Integer(string="Adhaar Number", size=12)
+    disability_of_any = fields.Selection([
+        ('no', 'No'),
+        ('yes', 'Yes')
+    ], string='Disability if Any?')
+
+    disability_details = fields.Char(string='Disability Details')
+
+    previous_school_name = fields.Char(string='Previous School Name')
+    date_of_leaving = fields.Date(string='Date of Leaving')
+    documents = fields.Many2many(
+        comodel_name='ir.attachment',
+        string='Documents'
+    )
+
+    @api.onchange('disability_of_any')
+    def _onchange_disability_of_any(self):
+        if self.disability_of_any != 'yes':
+            self.disability_details = False
+
+    @api.onchange('is_same_street')
+    def _onchange_is_same_street(self):
+        if self.is_same_street:
+            self.street2 = self.street
+            self.city2 = self.city
+            self.zip2 = self.zip
+            self.state_id2 = self.state_id
+            self.country_id2 = self.country_id
+        else:
+            self.street2 = False
+            self.city2 = False
+            self.zip2 = False
+            self.state_id2 = False
+            self.country_id2 = False
 
     _sql_constraints = [(
         'unique_gr_no',

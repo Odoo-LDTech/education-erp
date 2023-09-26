@@ -30,16 +30,45 @@ class OpParent(models.Model):
     name = fields.Many2one('res.partner', 'Name', required=True)
     user_id = fields.Many2one('res.users', string='User', store=True)
     student_ids = fields.Many2many('op.student', string='Student(s)')
-    mobile = fields.Char(string='Mobile', related='name.mobile')
+    mobile = fields.Char(string='Mobile', related='name.mobile', readonly=False)
     active = fields.Boolean(default=True)
     relationship_id = fields.Many2one('op.parent.relationship',
                                       'Relation with Student', required=True)
+
+    occupation = fields.Char(string='Occupation')
+    email = fields.Char(string='Email', domain="[('communication_preference', '=', 'email')]", related='name.email')
+    phone = fields.Char(string='Phone', domain="[('communication_preference', '=', 'phone')]")
+    related_email = fields.Char(string='Email', compute='_compute_related_email', store=True, readonly=False)
+    related_phone = fields.Char(string='Phone', compute='_compute_related_phone', store=True, readonly=False)
+    communication_preference = fields.Selection([
+        ('email', 'Email'),
+        ('phone', 'Phone'),
+    ], string='Communication Preference')
+    additional_notes = fields.Text(string='Additional Notes')
+    optional_relation = fields.Char(string='Optional Relation', help='Relationship with Student')
+    optional_name = fields.Char(string='Optional Name')
 
     _sql_constraints = [(
         'unique_parent',
         'unique(name)',
         'Can not create parent multiple times.!'
     )]
+
+    @api.depends('communication_preference')
+    def _compute_related_email(self):
+        for record in self:
+            if record.communication_preference == 'email':
+                record.related_email = record.email
+            else:
+                record.related_email = False
+
+    @api.depends('communication_preference')
+    def _compute_related_phone(self):
+        for record in self:
+            if record.communication_preference == 'phone':
+                record.related_phone = record.phone
+            else:
+                record.related_phone = False
 
     @api.onchange('name')
     def _onchange_name(self):
@@ -101,6 +130,17 @@ class OpStudent(models.Model):
     _inherit = "op.student"
 
     parent_ids = fields.Many2many('op.parent', string='Parent')
+    parents_mail = fields.Char(string='Parents Email_ID', compute='_compute_parent_email', store=True)
+
+    @api.depends('parent_ids')
+    def _compute_parent_email(self):
+        for rec in self:
+            if rec.parent_ids:
+                emails = [parent.email for parent in rec.parent_ids if parent.name.email]
+                print('---------emails------', emails)
+                rec.parents_mail = ', '.join(emails)
+            else:
+                rec.parents_mail = ""
 
     @api.model_create_multi
     def create(self, vals):

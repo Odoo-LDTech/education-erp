@@ -2,7 +2,7 @@
 <odoo>
     <data>
         <menuitem id="menu_op_assignment_root" name="Assignments" sequence="40"
-                  web_icon="ld_assignment,static/description/icon.png"
+                  web_icon="ld_assignment,static/description/assign.png"
                   groups="ld_assignment.group_op_assignment_user"/>
 
         <menuitem id="menu_op_assignment_main" name="Assignments"

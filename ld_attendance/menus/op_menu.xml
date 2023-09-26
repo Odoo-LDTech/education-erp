@@ -4,7 +4,7 @@
         <menuitem id="menu_op_attendance_root"
                   name=" Attendances"
                   sequence="50"
-                  web_icon="ld_attendance,static/description/icon.png"
+                  web_icon="ld_attendance,static/description/attends.png"
                   groups="ld_attendance.group_op_attendance_user,ld_attendance.group_op_attendance_manager"/>
 
         <menuitem id="menu_op_attendance"

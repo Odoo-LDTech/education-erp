@@ -22,6 +22,28 @@
                         <field string="Invoiced" name="total_invoiced" widget="statinfo"/>
                     </button>
                 </xpath>
+                <xpath expr="//form/sheet/notebook/page[@name='miscellaneous']" position="after">
+                    <page name="fees_detail" string="Fees Details">
+                        <tree>
+                            <field name="fees_detail_ids">
+                                <tree string="Fees Details">
+                                    <field name="date"/>
+                                    <field name="discount"/>
+                                    <field name="after_discount_amount"/>
+                                    <field name="amount"/>
+                                    <field name="state"/>
+                                    <field name="invoice_id"/>
+                                    <button name="action_create_invoice_std" string="Create Invoice" type="object"
+                                            class="btn-primary"
+                                            attrs="{'invisible': [('state', 'in', ['invoice', 'cancel'])]}"/>
+                                    <button name="action_view_invoice" string="View Invoice" type="object"
+                                            class="btn-primary"
+                                            attrs="{'invisible': [('state', 'not in', ['invoice', 'cancel'])]}"/>
+                                </tree>
+                            </field>
+                        </tree>
+                    </page>
+                </xpath>
             </field>
         </record>
     </data>

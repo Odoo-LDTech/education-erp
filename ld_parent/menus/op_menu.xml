@@ -3,7 +3,7 @@
     <data>
         <menuitem id="menu_op_parent_root" name="Parents"
                   sequence="110"
-                  web_icon="ld_parent,static/description/icon.png"/>
+                  web_icon="ld_parent,static/description/par.png"/>
 
         <menuitem id="menu_op_parent_sub_parent" name="Parents"
                   parent="menu_op_parent_root" sequence="10"

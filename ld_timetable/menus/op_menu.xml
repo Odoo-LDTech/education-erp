@@ -4,7 +4,7 @@
     <menuitem name="TimeTables"
               id="menu_op_timetable_root"
               groups="ld_timetable.group_op_timetable_user,ld_timetable.group_op_timetable_manager"
-              web_icon="ld_timetable,static/description/icon.png"
+              web_icon="ld_timetable,static/description/tt.png"
               sequence="90">
     <menuitem name="Timetable"
               id="menu_op_timetable"

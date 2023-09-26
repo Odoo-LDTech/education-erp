@@ -21,12 +21,43 @@
 
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
+from datetime import datetime, timedelta
 
 
 class OpStudentFeesDetails(models.Model):
     _name = "op.student.fees.details"
     _description = "Student Fees Details"
     _rec_name = 'student_id'
+
+    def student_invoice_cron(self):
+        today = fields.Date.today()
+        five_days_from_today = today + timedelta(days=5)
+
+        # Find records where the invoice submission date is less than 5 days from today
+        records_to_notify = self.search([('date', '<', five_days_from_today)])
+
+        for record in records_to_notify:
+            # Check if an invoice is associated with this record
+            if record.invoice_id:
+                # Check if the invoice is paid or done
+                if record.invoice_id.state in ('paid', 'posted'):
+                    continue  # Skip sending the reminder email
+            # Assuming that student's email is stored in student_id
+            date_inv = record.date
+            student_email = record.student_id.parents_mail
+            days_remaining = (record.date - today).days
+            subject = f"Reminder: Invoice Submission (Due in {days_remaining} days)"
+            body = (
+                f"Dear Sir/Madam,<br/><br/>This is a gentle reminder to submit your due amount on or before {date_inv}."
+                f"<br/>You have {days_remaining} days remaining."
+                f"<br/>"
+                f"<br/>Best Regards.")
+            email_values = {
+                'subject': subject,
+                'email_to': student_email,
+                'body_html': body,
+            }
+            self.env['mail.mail'].create(email_values).send()
 
     fees_line_id = fields.Many2one('op.fees.terms.line', 'Fees Line')
     invoice_id = fields.Many2one('account.move', 'Invoice ID')
@@ -148,6 +179,75 @@ class OpStudentFeesDetails(models.Model):
             }
         return value
 
+    def action_create_invoice_std(self):
+        record = self
+
+        invoice_line_ids = []
+        print('-----------1--------', invoice_line_ids)
+        total_amount = record.amount
+        print('-----------------2---------', total_amount)
+
+        for fees_element_line in record.fees_line_id.fees_element_line:
+            print('----------3-----------', record.fees_line_id)
+            print('----------4-----------', record.fees_line_id.fees_element_line)
+            print('----------5-----------', fees_element_line)
+            product_id = fees_element_line.product_id
+            print('-----------6--------', product_id)
+            # taxed_id = fees_element_line.product_id.taxes_id
+            product_share = fees_element_line.value  # Assuming this is the share value or percentage
+            print('---------7-----------', product_share)
+            disc_id = record.discount
+            # Calculate the amount for this product based on its share
+            product_amount = (total_amount * product_share) / 100  # Adjust the formula as needed
+            print('--------------8-------------', product_amount)
+            invoice_line = {
+                'product_id': product_id.id,
+                'name': product_id.name,  # You may need to adjust the field name
+                'quantity': 1,  # You may need to adjust this as needed
+                'price_unit': product_amount,
+                'discount': disc_id,
+                # 'tax_ids': taxed_id.id,
+            }
+            print('-----------9----------------', invoice_line)
+            invoice_line_ids.append((0, 0, invoice_line))
+            print('-----------10----------', invoice_line_ids)
+
+        self.write({'state': 'invoice'})
+        # Create the invoice
+        invoice = self.env['account.move'].create({
+            'move_type': 'out_invoice',
+            'partner_id': record.student_id.partner_id.id,
+            'invoice_line_ids': invoice_line_ids,
+        })
+        print('----------------1------------2-------------3---------', invoice)
+
+        # Set the related_invoice_id to the newly created invoice's ID
+        record.write({'state': 'invoice', 'invoice_id': invoice.id})
+
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Invoice',
+            'res_model': 'account.move',
+            'res_id': invoice.id,
+            'view_mode': 'form',
+            'view_type': 'form',
+            'target': 'current',
+        }
+
+    def action_view_invoice(self):
+        if self.invoice_id:
+            return {
+                'type': 'ir.actions.act_window',
+                'name': 'Invoice',
+                'res_model': 'account.move',
+                'res_id': self.invoice_id.id,
+                'view_mode': 'form',
+                'view_type': 'form',
+                'target': 'current',
+            }
+        else:
+            raise UserError(_("No invoice found for this record."))
+
 
 class OpStudent(models.Model):
     _inherit = "op.student"
@@ -168,9 +268,9 @@ class OpStudent(models.Model):
         return {
             'type': 'ir.actions.act_window',
             'name': 'Fees Details',
-            'view_mode': 'tree',
+            'view_mode': 'tree,form',
             'res_model': 'op.student.fees.details',
-            'context': {'create': False},
+            'context': {'create': True},
             'domain': [('student_id', '=', self.id)],
             'target': 'current',
         }
