@@ -6,7 +6,7 @@
             <field name="model">op.grade.configuration</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <tree string="Grade Configuration">
+                <tree string="Grade Configuration" create="true">
                     <field name="min_per"/>
                     <field name="max_per"/>
                     <field name="result"/>
@@ -19,7 +19,7 @@
             <field name="model">op.grade.configuration</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <form string="Grade Configuration">
+                <form string="Grade Configuration" edit="true" create="true">
                     <header/>
                     <sheet>
                         <group>

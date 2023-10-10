@@ -72,6 +72,13 @@
                   action="student_hall_ticket_act"
                   groups="ld_exam.group_op_exam_admin,ld_exam.group_op_exam_user"/>
 
+        <menuitem id="menu_student_sheet_second"
+                  name="Student Marksheet"
+                  parent="menu_op_exam_general"
+                  sequence="100"
+                  action="student_sheet_action"
+                  groups="ld_exam.group_op_exam_admin,ld_exam.group_op_exam_user"/>
+
         <menuitem id="menu_exam_configuration"
                   parent="menu_op_exam_root"
                   sequence="30"

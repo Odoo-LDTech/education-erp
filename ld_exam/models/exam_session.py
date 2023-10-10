@@ -20,7 +20,7 @@
 ###############################################################################
 
 from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError
+from odoo.exceptions import ValidationError, UserError
 
 
 class OpExamSession(models.Model):
@@ -80,6 +80,32 @@ class OpExamSession(models.Model):
 
     def act_schedule(self):
         self.state = 'schedule'
+        mail_template = self.env.ref('ld_exam.email_template_exam_schedule')
+
+        for exam in self.exam_ids:
+            for attendee in exam.attendees_line:
+                if attendee.student_id.email:
+                    email_values = {
+                        'email_from': self.env.user.email,
+                        'email_to': attendee.student_id.email,
+                        'subject': 'Exam Schedule Notification',
+                        'body_html': """
+                            <p>Hello {student_name},</p>
+                            <p>Your exam for {exam_name} has been scheduled.</p>
+                            <p>Exam Session: {session_name}</p>
+                            <p>Start Date: {start_date}</p>
+                            <p>End Date: {end_date}</p>
+                            <p>Good luck!</p>
+                        """.format(
+                            student_name=attendee.student_id.name,
+                            exam_name=exam.name,
+                            session_name=self.name,
+                            start_date=self.start_date,
+                            end_date=self.end_date,
+                        ),
+                    }
+                    mail = self.env['mail.mail'].create(email_values)
+                    mail.send()
 
     def act_held(self):
         self.state = 'held'

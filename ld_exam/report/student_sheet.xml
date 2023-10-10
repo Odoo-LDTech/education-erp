@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_sheet">
+            <style>
+                .font{
+                font-size:14px;
+                font-family:"Helvetica"
+                }
+                @page{
+                margin-top:1%;
+                size: A4;
+                }
+            </style>
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <t t-foreach="docs" t-as="o">
+                        <div class="page" style="border: 1px solid; padding: 10px;">
+                            <div class="page">
+                                <!--                                <div style="text-align: center;">-->
+                                <!--                                    <img src="ld_exam/static/description/icon.png" alt="Logo"-->
+                                <!--                                         style="max-width: 100px; height: auto; margin-left: 10px;"/>-->
+                                <!--                                </div>-->
+                                <div style="text-align: center;">
+                                    <h2 style="color: black;">
+                                        <strong>Student Mark Sheet</strong>
+                                    </h2>
+                                </div>
+                                <br/>
+                                <table class="table">
+                                    <tr>
+                                        <td style="background-color: #98B6D7">
+                                            <strong>Student Name:</strong>
+                                        </td>
+                                        <td colspan="3">
+                                            <span t-esc="o.student_id.name"/>
+                                        </td>
+                                        <td style="background-color: #98B6D7">
+                                            <strong>Parent Name:</strong>
+                                        </td>
+                                        <td>
+                                            <span t-foreach="o.student_id.parent_ids.name" t-as="parent"
+                                                  t-if="parent.name">
+                                                <span t-esc="parent.name"/>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="background-color: #98B6D7">
+                                            <strong>Batch Name:</strong>
+                                        </td>
+                                        <td colspan="3">
+                                            <span t-esc="o.exam_session_id.batch_id.name"/>
+                                        </td>
+                                        <td style="background-color: #98B6D7">
+                                            <strong>Exam Session:</strong>
+                                        </td>
+                                        <td>
+                                            <span t-esc="o.exam_session_id.name"/>
+                                        </td>
+                                    </tr>
+                                </table>
+
+
+                                <br/>
+                                <br/>
+                                <table class="table table-bordered" style="width: 100%;">
+                                    <thead class="text-center"
+                                           style="background-color: #98B6D7; font-size:14px; font-weight:600;">
+                                        <tr>
+                                            <th class="text-center">Course</th>
+                                            <th class="text-center">Exam</th>
+                                            <th class="text-center">Subject</th>
+                                            <th class="text-center">Total Marks</th>
+                                            <th class="text-center">Score</th>
+                                            <th class="text-center">Percentage</th>
+                                            <th class="text-center"
+                                                t-if="o.exam_session_id.evaluation_type != 'normal'">Grade
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-center" style="font-size:12px;">
+                                        <tr t-foreach="o.exam_session_id.exam_ids.attendees_line" t-as="attendee">
+                                            <t t-if="attendee.student_id.id == o.student_id.id">
+                                                <td class="text-left" style="padding: 15px; border: 1px solid #ccc;">
+                                                    <span t-esc="attendee.course_id.name"/>
+                                                </td>
+                                                <td class="text-left" style="padding: 15px; border: 1px solid #ccc;">
+                                                    <span t-esc="attendee.exam_id.name"/>
+                                                </td>
+                                                <td class="text-left" style="padding: 15px; border: 1px solid #ccc;">
+                                                    <span t-esc="attendee.exam_id.subject_id.name"/>
+                                                </td>
+                                                <td class="text-center" style="padding: 15px; border: 1px solid #ccc;">
+                                                    <span t-esc="attendee.exam_id.total_marks"/>
+                                                </td>
+                                                <td class="text-center" style="padding: 15px; border: 1px solid #ccc;">
+                                                    <span t-esc="attendee.marks"/>
+                                                </td>
+                                                <td class="text-center" style="padding: 15px; border: 1px solid #ccc;">
+                                                    <t t-set="percentage_value"
+                                                       t-value="round((attendee.marks / attendee.exam_id.total_marks) * 100, 2)"/>
+                                                    <span t-esc="percentage_value"/>
+                                                </td>
+                                                <td class="text-center" style="padding: 15px; border: 1px solid #ccc;"
+                                                    t-if="o.exam_session_id.evaluation_type != 'normal'">
+                                                    <t t-set="grades"
+                                                       t-value="env['op.grade.configuration'].search([])"/>
+                                                    <t t-set="grade" t-value="False"/>
+                                                    <t t-foreach="grades" t-as="g">
+                                                        <t t-if="g.min_per &lt;= percentage_value and g.max_per &gt;= percentage_value">
+                                                            <t t-set="grade" t-value="g"/>
+                                                        </t>
+                                                    </t>
+                                                    <span t-esc="grade.result"/>
+                                                </td>
+                                            </t>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table" style="width: 100%; margin-top: 20px; border-collapse: collapse;">
+                                    <tr>
+                                        <td colspan="2"
+                                            style="border: 1px solid black;background-color: #98B6D7; width: 50%; text-align: center;">
+                                            <strong>Total Marks:</strong>
+                                        </td>
+                                        <td colspan="2"
+                                            style="border: 1px solid black; width: 50%; text-align: center;">
+                                            <t t-set="total_marks" t-value="0"/>
+                                            <t t-foreach="o.exam_session_id.exam_ids.attendees_line" t-as="attendee">
+                                                <t t-if="attendee.student_id.id == o.student_id.id">
+                                                    <t t-set="total_marks"
+                                                       t-value="total_marks + attendee.exam_id.total_marks"/>
+                                                </t>
+                                            </t>
+                                            <span t-esc="total_marks"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2"
+                                            style="border: 1px solid black; width: 50%; background-color: #98B6D7; text-align: center;">
+                                            <strong>Total Score:</strong>
+                                        </td>
+                                        <td colspan="2"
+                                            style="border: 1px solid black; width: 50%; text-align: center;">
+                                            <t t-set="total_score" t-value="0"/>
+                                            <t t-foreach="o.exam_session_id.exam_ids.attendees_line" t-as="attendee">
+                                                <t t-if="attendee.student_id.id == o.student_id.id">
+                                                    <t t-set="total_score" t-value="total_score + attendee.marks"/>
+                                                </t>
+                                            </t>
+                                            <span t-esc="total_score"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2"
+                                            style="border: 1px solid black; width: 50%; background-color: #98B6D7; text-align: center;">
+                                            <strong>Total Percentage:</strong>
+                                        </td>
+                                        <td colspan="2"
+                                            style="border: 1px solid black; width: 50%; text-align: center;">
+                                            <t t-set="total_score" t-value="0"/>
+                                            <t t-set="total_marks" t-value="0"/>
+                                            <t t-foreach="o.exam_session_id.exam_ids.attendees_line" t-as="attendee">
+                                                <t t-if="attendee.student_id.id == o.student_id.id">
+                                                    <t t-set="total_score" t-value="total_score + attendee.marks"/>
+                                                    <t t-set="total_marks"
+                                                       t-value="total_marks + attendee.exam_id.total_marks"/>
+                                                </t>
+                                            </t>
+                                            <t t-if="total_marks > 0">
+                                                <t t-set="percentage_value"
+                                                   t-value="round((total_score / total_marks) * 100)"/>
+                                                <span t-esc="percentage_value"/>
+                                            </t>
+                                        </td>
+                                    </tr>
+
+                                    <tr t-if="o.exam_session_id.evaluation_type != 'normal'">
+                                        <td colspan="2" t-if="o.exam_session_id.evaluation_type != 'normal'"
+                                            style="border: 1px solid black; background-color: #98B6D7; width: 50%; text-align: center;">
+                                            <strong>Total Grade:</strong>
+                                        </td>
+                                        <td colspan="2"
+                                            style="border: 1px solid black; width: 50%; text-align: center;">
+                                            <t t-set="total_grade" t-value="None"/>
+                                            <t t-foreach="grades" t-as="g">
+                                                <t t-if="g.min_per &lt;= percentage_value and g.max_per &gt;= percentage_value">
+                                                    <t t-set="total_grade" t-value="g"/>
+                                                </t>
+                                            </t>
+                                            <t t-if="total_grade">
+                                                <span t-esc="total_grade.result"/>
+                                            </t>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                            </div>
+                            <div class="page" style="border: 1px solid #000; padding: 10px; margin-top: 20px;">
+                                <div style="text-align: center;">
+                                    <h2>Terms and Conditions</h2>
+                                </div>
+                                <p>
+                                    By accessing and using this student mark sheet report, you agree to the following
+                                    terms
+                                    and conditions:
+
+                                    <ol>
+                                        <li>
+                                            <strong>Disclaimer:</strong>
+                                            This report is provided "as is" without any warranties, expressed or
+                                            implied. We
+                                            disclaim all liability for any damages or losses resulting from the use of
+                                            this
+                                            report.
+                                        </li>
+                                        <li>
+                                            <strong>Privacy:</strong>
+                                            We are committed to protecting your privacy. Personal information collected
+                                            for
+                                            this report will be used in accordance with our privacy policy and
+                                            applicable
+                                            data protection laws.
+                                        </li>
+                                    </ol>
+
+                                    <p>
+                                        <strong>Motivational Quote for Students:</strong>
+                                        "Believe in yourself and all that you are. Know that there is something inside
+                                        you
+                                        that is greater than any obstacle."
+                                    </p>
+                                    Please read these terms and conditions carefully. If you do not agree with any part
+                                    of
+                                    these terms, do not use this report.
+                                </p>
+
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
