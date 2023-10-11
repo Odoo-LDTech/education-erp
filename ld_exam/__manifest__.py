@@ -37,6 +37,8 @@
         'views/exam_attendees_view.xml',
         'views/exam_room_view.xml',
         'data/exam_schedule_email.xml',
+        'data/send_result_announcement_date.xml',
+        'data/send_result_announcement.xml',
         'views/exam_session_view.xml',
         'views/exam_type_view.xml',
         'wizard/room_distribution_view.xml',

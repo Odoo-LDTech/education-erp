@@ -22,6 +22,7 @@ class StudentSheet(models.TransientModel):
             if rec.exam_session_id:
                 student_ids = rec.exam_session_id.exam_ids.mapped('attendees_line.student_id.id')
                 rec.student_id_domain = json.dumps([('id', 'in', student_ids)])
+                print('--------------json dumps=====--------', json.dumps([('id', 'in', student_ids)]))
             else:
                 rec.student_id_domain = False
 

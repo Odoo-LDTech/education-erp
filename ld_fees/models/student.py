@@ -32,26 +32,40 @@ class OpStudentFeesDetails(models.Model):
     def student_invoice_cron(self):
         today = fields.Date.today()
         five_days_from_today = today + timedelta(days=5)
-
-        # Find records where the invoice submission date is less than 5 days from today
-        records_to_notify = self.search([('date', '<', five_days_from_today)])
+        records_to_notify = self.search([('date', '>=', today), ('date', '<', five_days_from_today)])
 
         for record in records_to_notify:
-            # Check if an invoice is associated with this record
             if record.invoice_id:
-                # Check if the invoice is paid or done
                 if record.invoice_id.state in ('paid', 'posted'):
                     continue  # Skip sending the reminder email
-            # Assuming that student's email is stored in student_id
             date_inv = record.date
             student_email = record.student_id.parents_mail
-            days_remaining = (record.date - today).days
+            days_remaining = (date_inv - today).days
+            if days_remaining < 0:
+                continue  # Skip sending the reminder email if the invoice date is past due
             subject = f"Reminder: Invoice Submission (Due in {days_remaining} days)"
             body = (
                 f"Dear Sir/Madam,<br/><br/>This is a gentle reminder to submit your due amount on or before {date_inv}."
                 f"<br/>You have {days_remaining} days remaining."
                 f"<br/>"
                 f"<br/>Best Regards.")
+            email_values = {
+                'subject': subject,
+                'email_to': student_email,
+                'body_html': body,
+            }
+            if days_remaining == 0:
+                subject = "Last Day Reminder: Invoice Submission"
+                body = (
+                    f"Dear Sir/Madam,<br/><br/>Today is the last day to submit your due amount."
+                    f"<br/>Please ensure that the payment is made today to avoid any inconvenience."
+                    f"<br/><br/>Best Regards.")
+            else:
+                subject = f"Reminder: Invoice Submission (Due in {days_remaining} days)"
+                body = (
+                    f"Dear Sir/Madam,<br/><br/>This is a gentle reminder to submit your due amount on or before {date_inv}."
+                    f"<br/>You have {days_remaining} days remaining."
+                    f"<br/><br/>Best Regards.")
             email_values = {
                 'subject': subject,
                 'email_to': student_email,

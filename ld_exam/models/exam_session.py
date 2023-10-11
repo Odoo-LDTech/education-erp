@@ -41,6 +41,7 @@ class OpExamSession(models.Model):
         'Start Date', required=True, tracking=True)
     end_date = fields.Date(
         'End Date', required=True, tracking=True)
+    publish_date = fields.Date('Publish-Result Date', required=True, tracking=True)
     exam_ids = fields.One2many(
         'op.exam', 'session_id', 'Exam(s)')
     exam_type = fields.Many2one(
@@ -112,6 +113,29 @@ class OpExamSession(models.Model):
 
     def act_done(self):
         self.state = 'done'
+        mail_template = self.env.ref('ld_exam.email_template_result_publish')
+
+        for exam in self.exam_ids:
+            for attendee in exam.attendees_line:
+                if attendee.student_id.email:
+                    email_values = {
+                        'email_from': self.env.user.email,
+                        'email_to': attendee.student_id.email,
+                        'subject': 'Result Publish Notification',
+                        'body_html': """
+                        <p>Hello {student_name},</p>
+                        <p>Your exam results for {exam_name} will be published on {result_publish_date}.</p>
+                        <p>Exam Session: {session_name}</p>
+                        <p>Good luck!</p>
+                        """.format(
+                            student_name=attendee.student_id.name,
+                            exam_name=exam.name,
+                            session_name=self.name,
+                            result_publish_date=self.end_date,
+                        ),
+                        'reply_to': self.env.user.email,
+                    }
+                    self.env['mail.mail'].create(email_values).send()
 
     def act_cancel(self):
         self.state = 'cancel'
