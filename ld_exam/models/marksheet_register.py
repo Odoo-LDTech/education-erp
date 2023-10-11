@@ -81,8 +81,37 @@ class OpMarksheetRegister(models.Model):
                     count += 1
             record.total_failed = count
 
+
     def action_validate(self):
         self.state = 'validated'
+
+        # Send result announcement emails to students
+        mail_template = self.env.ref('ld_exam.email_template_result_announcement')
+
+        for marksheet in self.marksheet_line:
+            if marksheet.student_id.email:
+                email_values = {
+                    'email_from': self.env.user.email,
+                    'email_to': marksheet.student_id.email,
+                    'subject': 'Result Announcement Notification',
+                    'body_html': """
+                        <p>Hello {student_name},</p>
+                        <p>Your result for the exam has been announced.</p>
+                        <p>Exam Session: {session_name}</p>
+                        <p>Announcement Date: {announcement_date}</p>
+                        <p>Good luck!</p>
+                    """.format(
+                        student_name=marksheet.student_id.name,
+                        session_name=marksheet.marksheet_reg_id.exam_session_id.name,
+                        announcement_date=marksheet.generated_date,
+                    ),
+                    'reply_to': self.env.user.email,
+                }
+                # Create and send the email
+                self.env['mail.mail'].create(email_values).send()
+
+        return True
+    
 
     def act_cancel(self):
         self.state = 'cancelled'
