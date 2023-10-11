@@ -57,8 +57,7 @@
                             <group>
                                 <field name="name" placeholder="Parent Name" />
                                 <field name="occupation"/>
-<!--                                <field name="parents_email"/>-->
-<!--                                <field name="email"/>-->
+                                <field name="email"/>
                                 <field name="optional_name" />
                                 <field name="optional_relation" />
                                 <field name="communication_preference" class="oe_inline"/>

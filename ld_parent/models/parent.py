@@ -36,7 +36,7 @@ class OpParent(models.Model):
                                       'Relation with Student', required=True)
 
     occupation = fields.Char(string='Occupation')
-    email = fields.Char(string='Email', domain="[('communication_preference', '=', 'email')]", related='name.email')
+    email = fields.Char(string='Email', domain="[('communication_preference', '=', 'email')]", related='name.email', required=True, readonly=False)
     phone = fields.Char(string='Phone', domain="[('communication_preference', '=', 'phone')]")
     related_email = fields.Char(string='Email', compute='_compute_related_email', store=True, readonly=False)
     related_phone = fields.Char(string='Phone', compute='_compute_related_phone', store=True, readonly=False)

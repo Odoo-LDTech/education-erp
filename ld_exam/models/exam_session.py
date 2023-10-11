@@ -20,9 +20,7 @@
 ###############################################################################
 
 from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError , UserError
-
-
+from odoo.exceptions import ValidationError, UserError
 
 
 class OpExamSession(models.Model):
@@ -43,6 +41,7 @@ class OpExamSession(models.Model):
         'Start Date', required=True, tracking=True)
     end_date = fields.Date(
         'End Date', required=True, tracking=True)
+    publish_date = fields.Date('Publish-Result Date', required=True, tracking=True)
     exam_ids = fields.One2many(
         'op.exam', 'session_id', 'Exam(s)')
     exam_type = fields.Many2one(
@@ -106,10 +105,9 @@ class OpExamSession(models.Model):
                             start_date=self.start_date,
                             end_date=self.end_date,
                         ),
-                        'reply_to': self.env.user.email,
                     }
-                    self.env['mail.mail'].create(email_values).send()
-                    
+                    mail = self.env['mail.mail'].create(email_values)
+                    mail.send()
 
     def act_held(self):
         self.state = 'held'
@@ -126,10 +124,10 @@ class OpExamSession(models.Model):
                         'email_to': attendee.student_id.email,
                         'subject': 'Result Publish Notification',
                         'body_html': """
-                            <p>Hello {student_name},</p>
-                            <p>Your exam results for {exam_name} will be published on {result_publish_date}.</p>
-                            <p>Exam Session: {session_name}</p>
-                            <p>Good luck!</p>
+                        <p>Hello {student_name},</p>
+                        <p>Your exam results for {exam_name} will be published on {result_publish_date}.</p>
+                        <p>Exam Session: {session_name}</p>
+                        <p>Good luck!</p>
                         """.format(
                             student_name=attendee.student_id.name,
                             exam_name=exam.name,

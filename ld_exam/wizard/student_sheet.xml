@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="student_sheet_form_view">
+            <field name="name">student.sheet.form</field>
+            <field name="model">student.sheet</field>
+            <field name="arch" type="xml">
+                <form string="Student Mark-Sheet">
+                    <group>
+                        <field name="exam_session_id"/>
+                        <field name="student_id" domain="student_id_domain"/>
+                        <field name="student_id_domain" invisible="1"/>
+
+                    </group>
+                    <footer groups="base.group_user">
+                        <button name="print_student_sheet" type="object" string="Print" class="oe_highlight"/>
+                        <button string="Cancel" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="student_sheet_action">
+            <field name="name">Student sheet</field>
+            <field name="res_model">student.sheet</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="student_sheet_form_view"/>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

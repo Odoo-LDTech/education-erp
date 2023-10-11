@@ -95,11 +95,11 @@ class OpMarksheetRegister(models.Model):
                     'email_to': marksheet.student_id.email,
                     'subject': 'Result Announcement Notification',
                     'body_html': """
-                        <p>Hello {student_name},</p>
-                        <p>Your result for the exam has been announced.</p>
-                        <p>Exam Session: {session_name}</p>
-                        <p>Announcement Date: {announcement_date}</p>
-                        <p>Good luck!</p>
+                    <p>Hello {student_name},</p>
+                    <p>Your result for the exam has been announced.</p>
+                    <p>Exam Session: {session_name}</p>
+                    <p>Announcement Date: {announcement_date}</p>
+                    <p>Good luck!</p>
                     """.format(
                         student_name=marksheet.student_id.name,
                         session_name=marksheet.marksheet_reg_id.exam_session_id.name,
@@ -111,7 +111,6 @@ class OpMarksheetRegister(models.Model):
                 self.env['mail.mail'].create(email_values).send()
 
         return True
-    
 
     def act_cancel(self):
         self.state = 'cancelled'
