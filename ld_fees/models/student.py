@@ -85,6 +85,7 @@ class OpStudentFeesDetails(models.Model):
 
     course_id = fields.Many2one('op.course', 'Course', required=False)
     batch_id = fields.Many2one('op.batch', 'Batch', required=False)
+    
 
     @api.depends('discount')
     def _compute_discount_amount(self):

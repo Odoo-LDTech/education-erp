@@ -130,7 +130,7 @@ class OpStudent(models.Model):
     _inherit = "op.student"
 
     parent_ids = fields.Many2many('op.parent', string='Parent')
-    parents_mail = fields.Char(string='Parents Email_ID', compute='_compute_parent_email', store=True)
+    parents_mail = fields.Char(string='Parents Email ID', compute='_compute_parent_email', store=True)
 
     @api.depends('parent_ids')
     def _compute_parent_email(self):
