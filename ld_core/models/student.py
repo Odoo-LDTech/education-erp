@@ -104,18 +104,20 @@ class OpStudent(models.Model):
                                         tracking=True, readonly=True)
 
     street = fields.Char(
-        'Street', size=256, readonly=True)
+        'Street', size=256)
+    
     street2 = fields.Char(
-        'Street2', size=256, readonly=True)
+        'Street2', size=256)
+    
     is_same_street = fields.Boolean('Same as Street1', default=False)
 
-    city2 = fields.Char('City', size=64, readonly=True)
-    zip2 = fields.Char('Zip', size=8, readonly=True)
+    city2 = fields.Char('City', size=64)
+    zip2 = fields.Char('Zip', size=8)
     state_id2 = fields.Many2one(
-        'res.country.state', 'States', readonly=True)
+        'res.country.state', 'States')
 
     country_id2 = fields.Many2one(
-        'res.country', 'Country', readonly=True)
+        'res.country', 'Country')
 
     pan_no = fields.Char(string="Pan", size=10)
     adhaar_no = fields.Integer(string="Adhaar Number", size=12)
@@ -132,7 +134,7 @@ class OpStudent(models.Model):
         comodel_name='ir.attachment',
         string='Documents'
     )
-
+    
     @api.onchange('disability_of_any')
     def _onchange_disability_of_any(self):
         if self.disability_of_any != 'yes':
